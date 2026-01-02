@@ -8,8 +8,8 @@ def manualFRPBypass():
     # Equivalent to uploading the frp.bin and executing it if the property ro.secure is set to 1
     print("Bypassing FRP...")
     cmds = []
-    cmds.append("am start -n com.google.android.gsf.login/")
-    cmds.append("am start -n com.google.android.gsf.login.LoginActivity")
+    cmds.append("am start -n com.google.android.gsf.login/")  # this one is triggering an exception ("Bad component name") on some devices, but doesn't harm obviously
+    cmds.append("am start -n com.google.android.gsf.login.LoginActivity")  # this line as well
     cmds.append("settings put global setup_wizard_has_run 1")
     cmds.append("settings put secure user_setup_complete 1")
     cmds.append("settings put global device_provisioned 1")

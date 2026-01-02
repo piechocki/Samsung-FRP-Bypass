@@ -53,7 +53,7 @@ def tryATCmds(io: serial.Serial, cmds: List[str], delay: int = 0):
 
 def enableADB():
     default_port = list_serial_ports()
-    port = input(f"Choose a serial port (default={default_port.device}) :") or str(default_port.device)
+    port = input(f"Choose a serial port (default={default_port.device}): ") or str(default_port.device)
     io = get_AT_serial(port)
 
 
